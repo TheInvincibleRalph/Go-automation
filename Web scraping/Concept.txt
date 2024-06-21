@@ -1,0 +1,31 @@
+Web scraping is the process of programmatically extracting data from websites. In Go, web scraping can be done using packages like net/http for making HTTP requests and golang.org/x/net/html or third-party libraries like goquery for parsing HTML.
+
+
+To parse and query HTML documents means to programmatically analyze and extract information from the HTML structure of web pages. Here's a more detailed explanation of each term:
+
+Parsing HTML
+Parsing HTML refers to the process of analyzing the HTML markup of a webpage to build a structured representation of the content, often in the form of a Document Object Model (DOM) tree. This allows a program to understand the structure and elements of the HTML document.
+
+HTML Structure: HTML documents are structured hierarchically with nested tags (elements). Each tag can contain attributes and content.
+DOM Tree: When an HTML document is parsed, it's transformed into a tree-like structure called the DOM, where each node represents an HTML element.
+For example, consider the following HTML snippet:
+
+html
+Copy code
+<html>
+  <head>
+    <title>Example</title>
+  </head>
+  <body>
+    <h1>Welcome to Example</h1>
+    <p>This is an example paragraph.</p>
+  </body>
+</html>
+Parsing this HTML would create a DOM tree with html as the root node, containing head and body as child nodes, and so on.
+
+Querying HTML
+Querying HTML refers to the process of searching and selecting specific elements within the parsed HTML document (DOM). This is similar to using SQL to query a database. Querying allows you to locate and extract the specific data you are interested in.
+
+Selectors: Querying is typically done using selectors, which can be tag names, class names, IDs, or other attributes.
+Manipulation: Once elements are selected, you can read their content, attributes, or manipulate them as needed.
+For instance, using a tool like goquery in Go, you can query elements with jQuery-like syntax.
