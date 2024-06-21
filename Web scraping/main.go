@@ -26,7 +26,7 @@ func main() {
 
 	// Step 3: Find and extract the data
 
-	document.Find("h1").Each(func(index int, element *goquery.Selection) {
+	document.Find("h1").Each(func(index int, element *goquery.Selection) { //Iterates over each h1 element found.
 		// Get the text of the h1 element
 		heading := element.Text()
 		fmt.Println("Heading:", heading)
