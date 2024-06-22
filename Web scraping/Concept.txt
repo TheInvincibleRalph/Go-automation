@@ -3,7 +3,8 @@ Web scraping is the process of programmatically extracting data from websites. I
 
 To parse and query HTML documents means to programmatically analyze and extract information from the HTML structure of web pages. Here's a more detailed explanation of each term:
 
-Parsing HTML
+PARSING HTML
+
 Parsing HTML refers to the process of analyzing the HTML markup of a webpage to build a structured representation of the content, often in the form of a Document Object Model (DOM) tree. This allows a program to understand the structure and elements of the HTML document.
 
 HTML Structure: HTML documents are structured hierarchically with nested tags (elements). Each tag can contain attributes and content.
@@ -23,9 +24,33 @@ Copy code
 </html>
 Parsing this HTML would create a DOM tree with html as the root node, containing head and body as child nodes, and so on.
 
-Querying HTML
+QUERYING HTML
+
 Querying HTML refers to the process of searching and selecting specific elements within the parsed HTML document (DOM). This is similar to using SQL to query a database. Querying allows you to locate and extract the specific data you are interested in.
 
 Selectors: Querying is typically done using selectors, which can be tag names, class names, IDs, or other attributes.
 Manipulation: Once elements are selected, you can read their content, attributes, or manipulate them as needed.
 For instance, using a tool like goquery in Go, you can query elements with jQuery-like syntax.
+
+
+PAGINATION
+
+Pagination refers to the process of dividing a large set of data or content into discrete pages, making it easier to view, navigate, and manage. In the context of web scraping and web development, pagination is commonly used for displaying a limited number of records on a single page, and providing navigation controls (such as "Next", "Previous", "1, 2, 3...") to access other pages.
+
+Key Concepts of Pagination
+Page Numbers: Pages are typically numbered sequentially (e.g., 1, 2, 3, ...).
+Limit and Offset: Limit defines the number of items per page, while offset determines the starting point for each page.
+Navigation Controls: Links or buttons to navigate between pages (e.g., "Next", "Previous", specific page numbers).
+URL Parameters: Many websites use URL parameters to indicate the current page (e.g., ?page=2).
+Example: Pagination in Web Scraping
+When scraping websites that use pagination, it's important to handle each page and extract data from all available pages.
+
+Scenario: Scraping a Job Listings Website
+Suppose we have a website with job listings where each page contains 10 job postings. The URL for each page follows this pattern: https://example-job-board.com/jobs?page=1, https://example-job-board.com/jobs?page=2, etc.
+
+Step-by-Step Guide to Handle Pagination
+Identify the Pagination Pattern: Determine how the website structures its URLs for different pages.
+Fetch the First Page: Start by scraping the first page.
+Extract Data: Extract the required data from the first page.
+Navigate to the Next Page: Find the link or parameter for the next page and repeat the process.
+Loop Until No More Pages: Continue until you have scraped all available pages.
