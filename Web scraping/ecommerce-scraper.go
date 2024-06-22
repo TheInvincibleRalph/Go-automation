@@ -107,4 +107,13 @@ func main() {
 		writer.Write(record)
 	}
 
+	/*
+	   The writer.Flush() method in the encoding/csv package is used to write any buffered data
+	   to the underlying io.Writer. When working with buffered writers, such as csv.NewWriter,
+	   data is not immediately written to the output destination(in case of a file).
+	   It is instead temporarily stored in an in-memory buffer.
+	   The Flush method forces the buffered data to be written to the file.
+
+	*/
+
 }
